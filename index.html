@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essence Royale | Parfume Mewah & Elegan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8a6d3b;
+            --secondary-color: #f9f2e7;
+            --accent-color: #c0a080;
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595425970377-2f8ded7c7b19?ixlib=rb-4.0.3') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1.5s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease;
+        }
+        
+        .btn-gold {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-gold:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .cart-sidebar {
+                width: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cart-sidebar {
+                width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 24px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-crown me-2"></i>Essence Royale
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cart-toggle" href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count badge bg-primary">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Essence Royale</h1>
+                <p class="hero-subtitle">Temukan Aroma Mewah yang Mencerminkan Kepribadian Anda</p>
+                <button class="btn btn-gold">Jelajahi Koleksi</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Koleksi Parfume Kami</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1592945403407-9de659572da6?ixlib=rb-4.0.3" alt="Royal Oud">
+                            <div class="product-overlay">
+                                <button class="btn btn-gold add-to-cart" data-product="Royal Oud" data-price="450000">Tambah ke Keranjang</button>
+                            </div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h4>Royal Oud</h4>
+                            <p>Aroma kayu oud yang mewah dengan sentuhan amber dan musk.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">Rp 450.000</span>
+                                <button class="btn btn-sm btn-outline-primary add-to-cart" data-product="Royal Oud" data-price="450000">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1595425970377-2f8ded7c7b19?ixlib=rb-4.0.3" alt="Velvet Rose">
+                            <div class="product-overlay">
+                                <button class="btn btn-gold add-to-cart" data-product="Velvet Rose" data-price="420000">Tambah ke Keranjang</button>
+                            </div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h4>Velvet Rose</h4>
+                            <p>Wangian mawar yang elegan dengan campuran vanilla dan patchouli.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">Rp 420.000</span>
+                                <button class="btn btn-sm btn-outline-primary add-to-cart" data-product="Velvet Rose" data-price="420000">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1608528577891-eb055944d3c9?ixlib=rb-4.0.3" alt="Noir Mystique">
+                            <div class="product-overlay">
+                                <button class="btn btn-gold add-to-cart" data-product="Noir Mystique" data-price="480000">Tambah ke Keranjang</button>
+                            </div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h4>Noir Mystique</h4>
+                            <p>Aroma misterius dengan paduan black currant, bergamot, dan cedarwood.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">Rp 480.000</span>
+                                <button class="btn btn-sm btn-outline-primary add-to-cart" data-product="Noir Mystique" data-price="480000">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1590736969955-71cc94c4845e?ixlib=rb-4.0.3" alt="Amber Blossom">
+                            <div class="product-overlay">
+                                <button class="btn btn-gold add-to-cart" data-product="Amber Blossom" data-price="390000">Tambah ke Keranjang</button>
+                            </div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h4>Amber Blossom</h4>
+                            <p>Harmoni antara amber hangat dan bunga-bunga segar yang memesona.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">Rp 390.000</span>
+                                <button class="btn btn-sm btn-outline-primary add-to-cart" data-product="Amber Blossom" data-price="390000">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1595425970377-2f8ded7c7b19?ixlib=rb-4.0.3" alt="Citrus Elegance">
+                            <div class="product-overlay">
+                                <button class="btn btn-gold add-to-cart" data-product="Citrus Elegance" data-price="370000">Tambah ke Keranjang</button>
+                            </div>
+                        </div>
+                        <div class="product-details p-4">
+                            <h4>Citrus Elegance</h4>
+                            <p>Kesegaran citrus yang elegan dengan sentuhan herbal dan woody notes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">Rp 370.000</span>
+                                <button class="btn btn-sm btn-outline-primary add-to-cart" data-product="Citrus Elegance" data-price="370000">+ Keranjang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Tentang Essence Royale</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1615634376658-7d076f2bd7ad?ixlib=rb-4.0.3" alt="About Us" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Crafting Luxury Scents Since 2010</h3>
+                    <p>Essence Royale didirikan dengan visi untuk menciptakan parfume mewah yang tidak hanya memikat indera penciuman tetapi juga mencerminkan kepribadian penggunanya.</p>
+                    <p>Setiap parfume kami dibuat dengan bahan-bahan pilihan terbaik dari seluruh dunia, melalui proses penyulingan yang presisi dan pengawasan ketat para master perfumer.</p>
+                    <p>Kami percaya bahwa wewangian adalah bentuk ekspresi diri yang paling elegan, dan setiap botol Essence Royale adalah mahakarya yang dirancang untuk meninggalkan kesan abadi.</p>
+                    <button class="btn btn-gold mt-3">Baca Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay"></div>
+    <div class="cart-sidebar">
+        <h4 class="mb-4"><i class="fas fa-shopping-cart me-2"></i>Keranjang Belanja</h4>
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total mt-4">
+            <h5>Total: <span class="total-amount">Rp 0</span></h5>
+        </div>
+        <button class="btn btn-gold w-100 mt-3">Checkout</button>
+        <button class="btn btn-outline-secondary w-100 mt-3 cart-toggle">Lanjutkan Belanja</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-4">Essence Royale</h4>
+                    <p>Menghadirkan wewangian mewah untuk mereka yang menghargai keindahan dan keanggunan.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#products" class="text-white text-decoration-none">Produk</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">Tentang Kami</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Kontak Kami</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Jl. Kemang Raya No. 12, Jakarta Selatan</p>
+                    <p><i class="fas fa-phone me-2"></i> +62 21 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@essenceroyale.com</p>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <div class="text-center pt-3">
+                <p>&copy; 2023 Essence Royale. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Cart functionality
+            let cartItems = [];
+            let totalAmount = 0;
+            
+            // Toggle cart sidebar
+            $('.cart-toggle').on('click', function(e) {
+                e.preventDefault();
+                $('.cart-sidebar, .cart-overlay').toggleClass('active');
+            });
+            
+            // Add to cart
+            $('.add-to-cart').on('click', function() {
+                const product = $(this).data('product');
+                const price = $(this).data('price');
+                
+                // Add item to cart
+                cartItems.push({ product, price });
+                
+                // Update total amount
+                totalAmount += price;
+                
+                // Update cart count
+                $('.cart-count').text(cartItems.length);
+                
+                // Update cart items display
+                updateCartDisplay();
+                
+                // Show notification
+                showNotification(`${product} telah ditambahkan ke keranjang!`);
+            });
+            
+            // Update cart display
+            function updateCartDisplay() {
+                const cartItemsContainer = $('.cart-items');
+                cartItemsContainer.empty();
+                
+                cartItems.forEach(item => {
+                    cartItemsContainer.append(`
+                        <div class="cart-item">
+                            <img src="https://images.unsplash.com/photo-1592945403407-9de659572da6?ixlib=rb-4.0.3" alt="${item.product}">
+                            <div class="cart-item-details">
+                                <h6>${item.product}</h6>
+                                <p>Rp ${item.price.toLocaleString('id-ID')}</p>
+                            </div>
+                        </div>
+                    `);
+                });
+                
+                // Update total amount
+                $('.total-amount').text(`Rp ${totalAmount.toLocaleString('id-ID')}`);
+            }
+            
+            // Show notification
+            function showNotification(message) {
+                const notification = $(`
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 1100;">
+                        ${message}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `);
+                
+                $('body').append(notification);
+                
+                // Auto remove after 3 seconds
+                setTimeout(() => {
+                    notification.alert('close');
+                }, 3000);
+            }
+            
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                
+                const target = this.hash;
+                const $target = $(target);
+                
+                $('html, body').animate({
+                    'scrollTop': $target.offset().top - 80
+                }, 800, 'swing');
+            });
+            
+            // Navbar background change on scroll
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').css('background-color', 'rgba(255, 255, 255, 0.95)');
+                    $('.navbar').css('padding', '10px 0');
+                } else {
+                    $('.navbar').css('background-color', 'rgba(255, 255, 255, 0.95)');
+                    $('.navbar').css('padding', '15px 0');
+                }
+            });
+            
+            // Parallax effect on hero section
+            $(window).scroll(function() {
+                const scroll = $(window).scrollTop();
+                $('.hero-section').css('background-position-y', scroll * 0.5 + 'px');
+            });
+            
+            // Animate elements on scroll
+            function animateElements() {
+                $('.product-card').each(function() {
+                    const position = $(this).offset().top;
+                    const scroll = $(window).scrollTop();
+                    const windowHeight = $(window).height();
+                    
+                    if (scroll + windowHeight - 100 > position) {
+                        $(this).addClass('animate__fadeInUp');
+                    }
+                });
+            }
+            
+            // Initial call
+            animateElements();
+            
+            // Call on scroll
+            $(window).scroll(function() {
+                animateElements();
+            });
+        });
+    </script>
+</body>
+</html>
