@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#030014">
-<meta name="description" content="HEDYFAKE // CYBER SECURITY LAB — security research, tool development, automation, OSINT and digital forensics.">
-<title>HEDYFAKE // CYBER SECURITY LAB</title>
+<meta name="description" content="HEDYY // CYBER SECURITY LAB — security research, tool development, automation, OSINT and digital forensics.">
+<title>HEDYY // CYBER SECURITY LAB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@400;500;600&family=Onest:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,12 @@
 :root{--bg:#030014;--bg2:#0a0424;--bg3:#1a0033;--cyan:#00f5ff;--purple:#7c3cff;--pink:#ff4fd8;--green:#00ff9d;--gold:#ffd166;--white:#fff;--text:#eaf4ff;--muted:#9ab2c9;--muted2:#b8a8d9;--glass:rgba(7,4,25,.72);--line:rgba(124,60,255,.26);--beat:0;--angle:0deg}
 body.light{--bg:#f5f7fb;--bg2:#eef2ff;--bg3:#e8dcff;--white:#141621;--text:#222532;--muted:#56607c;--muted2:#604b80;--glass:rgba(255,255,255,.76);--line:rgba(124,60,255,.18)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;background:var(--bg)}body{min-height:100%;overflow-x:hidden;background:radial-gradient(circle at 8% 10%,rgba(124,60,255,.17),transparent 32%),radial-gradient(circle at 88% 18%,rgba(0,245,255,.08),transparent 26%),linear-gradient(145deg,var(--bg3),var(--bg2) 48%,var(--bg));color:var(--text);font-family:Onest,system-ui,sans-serif;cursor:none;transition:background .5s,color .5s}body.light{background:radial-gradient(circle at 10% 10%,rgba(124,60,255,.13),transparent 32%),radial-gradient(circle at 85% 18%,rgba(0,245,255,.08),transparent 28%),linear-gradient(145deg,var(--bg3),var(--bg2) 55%,var(--bg))}body.modal{overflow:hidden}a{text-decoration:none;color:inherit}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}img{display:block;max-width:100%}section{position:relative;isolation:isolate;scroll-margin-top:90px}::selection{background:var(--cyan);color:#040017}.container{width:min(1240px,calc(100% - 40px));margin:auto}.pad{padding:118px 0}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font:600 10px/1 Fira Code,monospace;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--cyan));box-shadow:0 0 12px rgba(0,245,255,.6)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:46px}.section-title{margin-top:10px;font:400 clamp(46px,7vw,94px)/.86 Bebas Neue,sans-serif;letter-spacing:.04em;color:var(--white);text-transform:uppercase;text-shadow:0 0 16px rgba(124,60,255,.24)}.char{display:inline-block;transform:translateY(110%);opacity:0}.section-copy{max-width:570px;color:var(--muted);font-size:14px;line-height:1.9}.neon{position:relative;border-radius:18px;border:1px solid transparent;background:linear-gradient(var(--glass),var(--glass)) padding-box,conic-gradient(from var(--angle),var(--cyan),var(--purple),var(--pink),var(--green),var(--gold),var(--cyan)) border-box;box-shadow:0 28px 90px rgba(0,0,0,.36);overflow:hidden}.neon:after{content:"";position:absolute;inset:-40%;background:radial-gradient(circle,rgba(124,60,255,.14),transparent 45%);pointer-events:none;animation:breathe 5s ease-in-out infinite}.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:14px 24px;border-radius:7px;border:1px solid transparent;cursor:none;font:700 11px/1 Fira Code,monospace;letter-spacing:.09em;text-transform:uppercase;overflow:hidden;transition:transform .22s,box-shadow .22s,border-color .22s,background .22s}.btn:before{content:"";position:absolute;inset:-100% -20%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:translateX(-80%) rotate(12deg);transition:transform .6s}.btn:hover:before{transform:translateX(80%) rotate(12deg)}.btn:hover{transform:translateY(-2px) scale(1.025)}.primary{color:#fff;background:linear-gradient(115deg,#e91e63,var(--pink) 42%,var(--purple));box-shadow:0 0 18px rgba(255,79,216,.28),0 0 60px rgba(124,60,255,.17)}.primary:hover{box-shadow:0 0 32px rgba(255,79,216,.46),0 0 80px rgba(124,60,255,.28)}.secondary{color:var(--cyan);background:rgba(0,245,255,.025);border-color:rgba(0,245,255,.48)}.secondary:hover{background:rgba(0,245,255,.08);box-shadow:0 0 24px rgba(0,245,255,.18)}.ripple{position:absolute;width:8px;height:8px;border-radius:50%;background:#fff;transform:scale(0);animation:ripple .7s ease-out forwards;pointer-events:none;opacity:.5}
+/* === REALISTIC LIGHTING OVERLAY === */
+#laserFx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:6;mix-blend-mode:screen;opacity:.98}
+.laser-hud{position:fixed;left:16px;bottom:16px;z-index:10004;display:flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid rgba(0,245,255,.16);border-radius:999px;background:rgba(3,0,20,.46);backdrop-filter:blur(13px);color:#9ab2c9;font:500 8px/1 Fira Code,monospace;letter-spacing:.12em;text-transform:uppercase;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.laser-hud .live{width:6px;height:6px;border-radius:50%;background:#00ff9d;box-shadow:0 0 10px #00ff9d;animation:pulseDot 1.1s infinite}
+@media(max-width:560px){.laser-hud{left:10px;bottom:10px;font-size:7px;padding:8px 10px}.laser-hud .label{display:none}}
+body.light #laserFx{opacity:.72}
 /* === GLOBAL LAYERS === */
 #webgl,#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}#webgl{z-index:1}#fx{z-index:9997}.noise{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.065;background-image:radial-gradient(rgba(255,255,255,.5) .5px,transparent .5px);background-size:4px 4px;mix-blend-mode:soft-light}#progress{position:fixed;left:0;top:0;width:0;height:3px;z-index:10020;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink),var(--green));box-shadow:0 0 13px rgba(0,245,255,.8)}
 /* === CURSOR === */
@@ -41,10 +47,12 @@ body.light{--bg:#f5f7fb;--bg2:#eef2ff;--bg3:#e8dcff;--white:#141621;--text:#2225
 footer{position:relative;border-top:1px solid rgba(0,245,255,.15);background:#02000d}footer .main{padding:66px 0 44px;display:grid;grid-template-columns:1.15fr .75fr 1fr;gap:42px}.flogo{font:400 62px/.8 Bebas Neue,sans-serif;color:#fff;letter-spacing:.06em}.fdesc{margin-top:13px;max-width:460px;color:#786e90;font-size:11px;line-height:1.8}.fsocial{display:flex;gap:7px;margin-top:18px}.fhead{color:#fff;font:600 9px/1 Fira Code,monospace;letter-spacing:.15em;text-transform:uppercase}.fnav{display:grid;gap:10px;margin-top:16px}.fnav a{color:#877e9f;font:500 9px/1.3 Fira Code,monospace;text-transform:uppercase;letter-spacing:.08em;transition:.2s}.fnav a:hover{color:var(--cyan);transform:translateX(4px)}.pill{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 11px;border-radius:7px;border:1px solid rgba(0,255,157,.15);background:rgba(0,255,157,.025);color:#88bda4;font:500 8px/1 Fira Code,monospace;letter-spacing:.1em}.motto{padding:0 0 44px;text-align:center;color:rgba(255,255,255,.07);font:400 clamp(42px,8vw,103px)/.8 Bebas Neue,sans-serif;letter-spacing:.05em}.fbottom{min-height:64px;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;gap:20px;color:#6c627b;font:500 8px/1.5 Fira Code,monospace}
 /* === AUDIO === */
 .audio{position:fixed;right:16px;bottom:15px;z-index:10005;display:flex;gap:8px;align-items:center}.audio button{width:52px;height:52px;border-radius:50%;border:1px solid rgba(0,245,255,.28);background:rgba(3,0,20,.65);color:var(--cyan);display:grid;place-items:center;backdrop-filter:blur(14px);cursor:none}.volume{height:130px;width:42px;display:grid;place-items:center;border-radius:16px;background:rgba(3,0,20,.72);border:1px solid rgba(124,60,255,.18);backdrop-filter:blur(14px);opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s}.audio:hover .volume{opacity:1;visibility:visible;transform:none}.volume input{appearance:none;writing-mode:vertical-lr;direction:rtl;height:98px;width:5px;border-radius:99px;background:rgba(124,60,255,.18);cursor:none}.volume input::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink)}.eq{position:fixed;right:80px;bottom:25px;z-index:10005;height:34px;display:flex;align-items:end;gap:3px;padding:4px 7px;border-radius:8px;border:1px solid rgba(124,60,255,.13);background:rgba(3,0,20,.54);backdrop-filter:blur(12px)}.eq i{width:3px;height:8px;border-radius:99px;background:linear-gradient(180deg,var(--pink),var(--purple),var(--cyan));box-shadow:0 0 7px rgba(124,60,255,.4)}
+.audio-info{display:grid;gap:3px;min-width:118px;padding:9px 11px;border:1px solid rgba(0,245,255,.14);border-radius:11px;background:rgba(3,0,20,.58);backdrop-filter:blur(12px);box-shadow:0 12px 38px rgba(0,0,0,.25)}.audio-info strong{font:700 8px/1 Fira Code,monospace;letter-spacing:.12em;color:var(--white)}.audio-info span{font:500 7px/1.2 Fira Code,monospace;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase}.eq i{transform-origin:bottom}.laser-hud{position:fixed;left:16px;bottom:16px;z-index:10005;display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid rgba(255,79,216,.13);border-radius:999px;background:rgba(3,0,20,.48);backdrop-filter:blur(12px);color:#8f86a8;font:500 7px/1 Fira Code,monospace;letter-spacing:.1em}.laser-hud .live{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 11px var(--green);animation:pulseDot 1s infinite}.flash-frame{position:fixed;inset:0;z-index:7;pointer-events:none;background:#fff;mix-blend-mode:screen;opacity:0}.flash-frame.hit{animation:flashHit .16s ease-out}.beat-ring{position:fixed;left:50%;top:52%;z-index:5;width:120px;height:120px;border:1px solid rgba(0,245,255,.25);border-radius:50%;transform:translate(-50%,-50%) scale(.2);opacity:0;pointer-events:none;box-shadow:0 0 40px rgba(0,245,255,.12),inset 0 0 40px rgba(124,60,255,.1)}.beat-ring.active{animation:beatRing .6s cubic-bezier(.16,.8,.28,1) forwards}@keyframes flashHit{0%{opacity:.26}100%{opacity:0}}@keyframes beatRing{0%{transform:translate(-50%,-50%) scale(.2);opacity:.8}100%{transform:translate(-50%,-50%) scale(2.9);opacity:0}}
+
 /* === RESPONSIVE === */
 @media(max-width:1180px){.links{gap:16px}.socials{display:none}.toolgrid,.projectgrid{grid-template-columns:repeat(2,1fr)}.methods{grid-template-columns:repeat(3,1fr)}footer .main{grid-template-columns:1.2fr 1fr}}
 @media(max-width:920px){.links{display:none}.menu{display:grid}.nav-in{grid-template-columns:1fr auto}.about-grid,.tbody,.contactpanel{grid-template-columns:1fr}.portrait{min-height:520px}.contactactions{justify-self:start}.tools{padding-top:58px}footer .main{grid-template-columns:1fr 1fr}footer .main>:first-child{grid-column:1/-1}}
-@media(max-width:768px){body{cursor:auto}.cur,.trail{display:none!important}.container{width:calc(100% - 28px)}.pad{padding:84px 0}.section-head{display:block;margin-bottom:33px}.section-copy{margin-top:12px}.filters{grid-template-columns:1fr}.counter{min-height:48px}.bullets{grid-template-columns:1fr}.toolgrid,.projectgrid{grid-template-columns:1fr}.methods{grid-template-columns:1fr 1fr}.project{aspect-ratio:1/1.15}.tbody{padding:18px}.contactpanel{padding:28px}.contactactions{width:100%}.contactactions .btn{width:100%}footer .main{grid-template-columns:1fr}footer .main>:first-child{grid-column:auto}.fbottom{flex-direction:column;justify-content:center;text-align:center;padding:15px 0}.eq{right:78px;bottom:18px}.audio{right:11px;bottom:11px}}
+@media(max-width:768px){.audio-info{display:none}.laser-hud{left:10px;bottom:10px;font-size:6px}body{cursor:auto}.cur,.trail{display:none!important}.container{width:calc(100% - 28px)}.pad{padding:84px 0}.section-head{display:block;margin-bottom:33px}.section-copy{margin-top:12px}.filters{grid-template-columns:1fr}.counter{min-height:48px}.bullets{grid-template-columns:1fr}.toolgrid,.projectgrid{grid-template-columns:1fr}.methods{grid-template-columns:1fr 1fr}.project{aspect-ratio:1/1.15}.tbody{padding:18px}.contactpanel{padding:28px}.contactactions{width:100%}.contactactions .btn{width:100%}footer .main{grid-template-columns:1fr}footer .main>:first-child{grid-column:auto}.fbottom{flex-direction:column;justify-content:center;text-align:center;padding:15px 0}.eq{right:78px;bottom:18px}.audio{right:11px;bottom:11px}}
 @media(max-width:560px){.brand b{font-size:27px}.hero-in{width:calc(100% - 24px)}h1{font-size:clamp(62px,19vw,104px)}.ctas{flex-direction:column;width:min(320px,100%);margin-inline:auto}.btn{width:100%}.methods{grid-template-columns:1fr}.flowstep{grid-template-columns:63px 1fr}.node{width:63px;height:63px}.flowstep:not(:last-child):after{left:31px}.ptitle{font-size:37px}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}html{scroll-behavior:auto}#webgl{opacity:.62}}
 /* === KEYFRAMES === */
@@ -53,16 +61,16 @@ footer{position:relative;border-top:1px solid rgba(0,245,255,.15);background:#02
 </head>
 <body>
 <!-- === GLOBAL VISUAL CANVASES === -->
-<canvas id="webgl" aria-hidden="true"></canvas><canvas id="fx" aria-hidden="true"></canvas><div class="noise"></div><div id="progress"></div>
+<canvas id="webgl" aria-hidden="true"></canvas><canvas id="laserFx" aria-hidden="true"></canvas><canvas id="fx" aria-hidden="true"></canvas><div class="noise"></div><div id="progress"></div><div class="flash-frame" id="flashFrame"></div><div class="beat-ring" id="beatRing"></div><div class="laser-hud"><span class="live"></span><span>LIVE LIGHTING / REALTIME VOLUMETRIC FX</span></div>
 <!-- === CUSTOM CURSOR === --><div class="cur dot"></div><div class="cur ring"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div><div class="trail"></div>
 <!-- === NAVIGATION === -->
 <header class="nav" id="nav"><div class="nav-in"><a class="brand" href="#home"><b>HEDY<span>FAKE</span></b><small>CYBER SECURITY LAB</small></a><nav class="links"><a class="active" href="#home">HOME</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#tools">TOOLS</a><a href="#projects">PROJECTS</a><a href="#pipeline">PIPELINE</a><a href="#contact">CONTACT</a></nav><div class="actions"><div class="socials"><a class="icon hover" href="https://github.com/HedyFake" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a class="icon hover" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="icon hover" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><button class="laser hover" id="laser" aria-label="Laser mode" aria-pressed="false"><i class="fa-solid fa-bolt"></i><em></em></button><button class="icon hover" id="theme" aria-label="White hat mode" aria-pressed="false"><i class="fa-solid fa-sun"></i></button><button class="menu hover" id="openMenu" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button></div></div></header>
 <div class="backdrop" id="backdrop"></div><aside class="drawer" id="drawer" aria-hidden="true"><button class="icon close hover" id="closeMenu" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button><nav><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#tools">TOOLS</a><a href="#projects">PROJECTS</a><a href="#pipeline">PIPELINE</a><a href="#contact">CONTACT</a></nav></aside>
 <main>
 <!-- === HERO === -->
-<section class="hero" id="home"><div class="gridfloor"></div><div class="hero-in"><div class="crumb"><span>HOME</span><i>/</i><span>CYBER SECURITY LAB</span></div><div class="title-wrap" data-title="M. HEDY WIBIANTO"><h1 id="heroTitle">M. HEDY WIBIANTO</h1></div><div class="kicker">HEDYFAKE // CYBER SECURITY RESEARCHER</div><div class="tagline">Build. Break. Analyze. Learn. Secure.</div><div class="typing" id="typing"></div><div class="ctas"><a class="btn primary ripple-target hover" id="anatomi" href="./anatomi/"><span>[ AKSES ANATOMI ]</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="btn secondary ripple-target hover" href="#projects"><span>[ LIHAT PROJECTS ]</span><i class="fa-solid fa-arrow-down"></i></a></div><div class="status"><span class="dot"></span>SECURITY WORKFLOW ONLINE · EVIDENCE-FIRST · SCOPE-FIRST</div></div><a class="scrollcue hover" href="#about"><span>SCROLL</span><i class="fa-solid fa-chevron-down"></i></a></section>
+<section class="hero" id="home"><div class="gridfloor"></div><div class="hero-in"><div class="crumb"><span>HOME</span><i>/</i><span>CYBER SECURITY LAB</span></div><div class="title-wrap" data-title="HEDYY"><h1 id="heroTitle">HEDYY</h1></div><div class="kicker">HEDYY // CYBER SECURITY RESEARCHER</div><div class="tagline">Research. Automate. Analyze. Secure.</div><div class="typing" id="typing"></div><div class="ctas"><a class="btn primary ripple-target hover" id="anatomi" href="./anatomi/"><span>[ AKSES ANATOMI ]</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="btn secondary ripple-target hover" href="#projects"><span>[ LIHAT PROJECTS ]</span><i class="fa-solid fa-arrow-down"></i></a></div><div class="status"><span class="dot"></span>SECURITY WORKFLOW ONLINE · EVIDENCE-FIRST · SCOPE-FIRST</div></div><a class="scrollcue hover" href="#about"><span>SCROLL</span><i class="fa-solid fa-chevron-down"></i></a></section>
 <!-- === ABOUT === -->
-<section class="about pad" id="about"><div class="container"><div class="section-head reveal"><div><span class="eyebrow">01 / PROFILE</span><h2 class="section-title split">WHOAMI</h2></div><p class="section-copy">Laboratorium pembelajaran keamanan siber yang menghubungkan script, reconnaissance, security testing, automation, evidence, reporting, dan AI-assisted analysis menjadi workflow yang bisa ditelusuri.</p></div><div class="about-grid"><article class="portrait neon reveal" data-tilt data-tilt-max="5"><div class="stamp"><h3>HEDYFAKE</h3><p>Security Research · Tool Development · Automation · OSINT · Digital Forensics</p></div></article><article class="aboutcopy neon reveal"><span class="eyebrow">M. HEDY WIBIANTO</span><div class="profile">Learning by Doing — eksperimen diarahkan menjadi proses yang dapat diulang dan diperiksa.</div><p class="copy">Fokusnya bukan sekadar menjalankan command. Workflow dimulai dari pengumpulan informasi, authorization dan scope, discovery, analisis, validasi evidence, triage, lalu reporting. AI dan automation dipakai sebagai lapisan bantuan, bukan pengganti evidence teknis maupun pemeriksaan manusia.</p><div class="bullets"><div class="bulletbox"><h4>Bidang Keahlian</h4><ul><li>Web Application Security — CORS, XSS, SQLi, IDOR, SSRF, LFI, CSRF</li><li>Reconnaissance &amp; Attack Surface Mapping</li><li>Security Tool Development — Python, PHP, Bash</li><li>Automation Pipeline &amp; Workflow Security</li><li>AI-Assisted Security Analysis &amp; Triage</li><li>OSINT &amp; Digital Forensics — EXIF, Metadata</li><li>Privacy Research &amp; Browser Security</li><li>Linux Security Workstation</li></ul></div><div class="bulletbox"><h4>Mindset &amp; Karakter</h4><ul><li>High Curiosity &amp; Strong Problem Solving</li><li>Systems &amp; Product-Oriented Thinking</li><li>Evidence-First, Scope-First Methodology</li><li>Willingness to Experiment &amp; Break Things</li><li>Visual Thinking &amp; Detail-Oriented</li><li>Reproducible Research &amp; Clean Documentation</li><li>Human-in-the-Loop Decision Making</li><li>Fail Closed When Scope Unclear</li></ul></div></div></article></div></div></section>
+<section class="about pad" id="about"><div class="container"><div class="section-head reveal"><div><span class="eyebrow">01 / PROFILE</span><h2 class="section-title split">WHOAMI</h2></div><p class="section-copy">Laboratorium pembelajaran keamanan siber yang menghubungkan script, reconnaissance, security testing, automation, evidence, reporting, dan AI-assisted analysis menjadi workflow yang bisa ditelusuri.</p></div><div class="about-grid"><article class="portrait neon reveal" data-tilt data-tilt-max="5"><div class="stamp"><h3>HEDYFAKE</h3><p>Security Research · Tool Development · Automation · OSINT · Digital Forensics</p></div></article><article class="aboutcopy neon reveal"><span class="eyebrow">HEDYY</span><div class="profile">Eksperimen terarah — proses dibuat rapi, dapat diulang, dan mudah diperiksa.</div><p class="copy">Fokusnya bukan sekadar menjalankan command. Workflow dimulai dari pengumpulan informasi, authorization dan scope, discovery, analisis, validasi evidence, triage, lalu reporting. AI dan automation dipakai sebagai lapisan bantuan, bukan pengganti evidence teknis maupun pemeriksaan manusia.</p><div class="bullets"><div class="bulletbox"><h4>Bidang Keahlian</h4><ul><li>Web Application Security — CORS, XSS, SQLi, IDOR, SSRF, LFI, CSRF</li><li>Reconnaissance &amp; Attack Surface Mapping</li><li>Security Tool Development — Python, PHP, Bash</li><li>Automation Pipeline &amp; Workflow Security</li><li>AI-Assisted Security Analysis &amp; Triage</li><li>OSINT &amp; Digital Forensics — EXIF, Metadata</li><li>Privacy Research &amp; Browser Security</li><li>Linux Security Workstation</li></ul></div><div class="bulletbox"><h4>Mindset &amp; Karakter</h4><ul><li>High Curiosity &amp; Strong Problem Solving</li><li>Systems &amp; Product-Oriented Thinking</li><li>Evidence-First, Scope-First Methodology</li><li>Willingness to Experiment &amp; Break Things</li><li>Visual Thinking &amp; Detail-Oriented</li><li>Reproducible Research &amp; Clean Documentation</li><li>Human-in-the-Loop Decision Making</li><li>Fail Closed When Scope Unclear</li></ul></div></div></article></div></div></section>
 <!-- === FILTER BAR === -->
 <section class="filter" id="skills"><div class="container"><div class="filters neon reveal"><select class="field" id="cat" aria-label="Skills category"><option value="all">SKILLS IN · ALL</option><option value="programming">PROGRAMMING</option><option value="recon">RECON</option><option value="scanning">SCANNING</option><option value="secrets">SECRETS</option><option value="automation">AUTOMATION</option><option value="environment">ENVIRONMENT</option></select><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input class="field" id="query" type="search" placeholder="SEARCH: Python, Nuclei, OSINT..." aria-label="Search tools"></div><button class="btn primary ripple-target hover" id="find"><span>FIND</span><i class="fa-solid fa-filter"></i></button><div class="counter" id="counter">ALL SYSTEMS · 29 ITEMS</div></div></div></section>
 <!-- === TOOLKIT === -->
@@ -112,12 +120,12 @@ human review............ required
 [output]
 reproducible report..... ready</pre><pre class="prompt">hedyfake@lab:~$ █</pre></div></div></div></div></section>
 <!-- === CONTACT === -->
-<section class="contact pad" id="contact"><div class="container"><div class="contactpanel neon reveal"><div><span class="eyebrow">07 / CONTACT</span><h2>LET'S BUILD A SAFER WORKFLOW.</h2><p>Untuk kolaborasi security tooling, research workflow, automation, atau dokumentasi evidence-first, hubungi melalui GitHub profile atau email. Semua pengujian aktif tetap berbasis authorization dan scope yang jelas.</p></div><div class="contactactions"><a class="btn primary hover" href="https://github.com/HedyFake" target="_blank" rel="noopener noreferrer"><span>OPEN GITHUB</span><i class="fa-brands fa-github"></i></a><a class="btn secondary hover" href="mailto:contact@hedyfake.dev"><span>SEND EMAIL</span><i class="fa-regular fa-envelope"></i></a></div></div></div></section>
+<section class="contact pad" id="contact"><div class="container"><div class="contactpanel neon reveal"><div><span class="eyebrow">07 / CONTACT</span><h2>LET'S CREATE A SAFER WORKFLOW.</h2><p>Untuk kolaborasi security tooling, research workflow, automation, atau dokumentasi evidence-first, hubungi melalui GitHub profile atau email. Semua pengujian aktif tetap berbasis authorization dan scope yang jelas.</p></div><div class="contactactions"><a class="btn primary hover" href="https://github.com/HedyFake" target="_blank" rel="noopener noreferrer"><span>OPEN GITHUB</span><i class="fa-brands fa-github"></i></a><a class="btn secondary hover" href="mailto:contact@hedyfake.dev"><span>SEND EMAIL</span><i class="fa-regular fa-envelope"></i></a></div></div></div></section>
 </main>
 <!-- === FOOTER === -->
-<footer><div class="container main"><div><div class="flogo">HEDYFAKE</div><p class="fdesc">Cyber security lab yang menghubungkan research, tool development, automation, OSINT, digital forensics, evidence, dan reporting menjadi workflow yang dapat ditelusuri.</p><div class="fsocial"><a class="icon hover" href="https://github.com/HedyFake" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a class="icon hover" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="icon hover" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="pill"><span class="dot"></span>SYSTEM STATUS: ONLINE</div></div><div><div class="fhead">Navigation</div><div class="fnav"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#pipeline">PIPELINE</a><a href="#contact">CONTACT</a></div></div><div><div class="fhead">Repositories</div><div class="fnav"><a href="https://github.com/HedyFake/AISCAN" target="_blank" rel="noopener noreferrer">AISCAN ↗</a><a href="https://github.com/HedyFake/nucleiweb" target="_blank" rel="noopener noreferrer">nucleiweb ↗</a><a href="https://github.com/HedyFake/TrackMe" target="_blank" rel="noopener noreferrer">TrackMe ↗</a><a href="https://github.com/HedyFake/CamHack" target="_blank" rel="noopener noreferrer">CamHack ↗</a><a href="https://github.com/HedyFake/Photo" target="_blank" rel="noopener noreferrer">Photo ↗</a><a href="https://github.com/HedyFake/HedyFake" target="_blank" rel="noopener noreferrer">HedyFake profile ↗</a></div></div></div><div class="container motto">Learn. Build. Test. Improve. Repeat.</div><div class="container fbottom"><span>© 2025 M. Hedy Wibianto — HEDYFAKE Cyber Security Lab.</span><span>Powered by Three.js, GSAP &amp; too much coffee.</span></div></footer>
+<footer><div class="container main"><div><div class="flogo">HEDYFAKE</div><p class="fdesc">Cyber security lab yang menghubungkan research, tool development, automation, OSINT, digital forensics, evidence, dan reporting menjadi workflow yang dapat ditelusuri.</p><div class="fsocial"><a class="icon hover" href="https://github.com/HedyFake" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a class="icon hover" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a class="icon hover" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div><div class="pill"><span class="dot"></span>SYSTEM STATUS: ONLINE</div></div><div><div class="fhead">Navigation</div><div class="fnav"><a href="#home">HOME</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a><a href="#pipeline">PIPELINE</a><a href="#contact">CONTACT</a></div></div><div><div class="fhead">Repositories</div><div class="fnav"><a href="https://github.com/HedyFake/AISCAN" target="_blank" rel="noopener noreferrer">AISCAN ↗</a><a href="https://github.com/HedyFake/nucleiweb" target="_blank" rel="noopener noreferrer">nucleiweb ↗</a><a href="https://github.com/HedyFake/TrackMe" target="_blank" rel="noopener noreferrer">TrackMe ↗</a><a href="https://github.com/HedyFake/CamHack" target="_blank" rel="noopener noreferrer">CamHack ↗</a><a href="https://github.com/HedyFake/Photo" target="_blank" rel="noopener noreferrer">Photo ↗</a><a href="https://github.com/HedyFake/HedyFake" target="_blank" rel="noopener noreferrer">HedyFake profile ↗</a></div></div></div><div class="container motto">RESEARCH. ANALYZE. SECURE. REPEAT.</div><div class="container fbottom"><span>© 2026 Hedyy — HEDYFAKE Cyber Security Lab.</span><span>Powered by Three.js, GSAP &amp; realtime canvas lighting.</span></div></footer>
 <!-- === AUDIO === -->
-<audio id="audio" preload="none" loop crossorigin="anonymous"><source src="https://h.top4top.io/m_39218jq9e1.mp3" type="audio/mpeg"></audio><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="audio"><div class="volume"><input id="volume" type="range" min="0" max="1" step=".01" value=".48" aria-label="Volume"></div><button class="hover" id="audioBtn" type="button" aria-label="Toggle audio" aria-pressed="false"><i class="fa-solid fa-volume-xmark"></i></button></div>
+<audio id="audio" preload="metadata" loop playsinline><source src="https://h.top4top.io/m_39218jq9e1.mp3" type="audio/mpeg"></audio><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio"><div class="audio-info"><strong id="audioStatus">MUSIC OFF</strong><span id="syncStatus">LIGHTS / IDLE</span></div><div class="volume"><input id="volume" type="range" min="0" max="1" step=".01" value=".48" aria-label="Volume"></div><button class="hover" id="audioBtn" type="button" aria-label="Toggle audio" aria-pressed="false"><i class="fa-solid fa-volume-xmark"></i></button></div>
 <script>
 /* === CORE STATE / HELPERS === */
 "use strict";
@@ -147,14 +155,198 @@ $$(".project").forEach(card=>{const img=$("img",card),done=()=>card.classList.ad
 const dot=$(".cur.dot"),ring=$(".cur.ring"),trails=$$(".trail"),p={x:innerWidth/2,y:innerHeight/2},r={x:p.x,y:p.y},ts=trails.map(()=>({x:p.x,y:p.y}));if(!state.mobile){addEventListener("pointermove",e=>{p.x=e.clientX;p.y=e.clientY;dot.style.opacity=ring.style.opacity="1"},{passive:true});function cLoop(){r.x=lerp(r.x,p.x,.17);r.y=lerp(r.y,p.y,.17);dot.style.transform=`translate3d(${p.x}px,${p.y}px,0) translate(-50%,-50%)`;ring.style.transform=`translate3d(${r.x}px,${r.y}px,0) translate(-50%,-50%)`;ts.forEach((t,i)=>{const s=i?ts[i-1]:p;t.x=lerp(t.x,s.x,.2-i*.012);t.y=lerp(t.y,s.y,.2-i*.012);trails[i].style.opacity=.5-i*.05;trails[i].style.color=["#00f5ff","#7c3cff","#ff4fd8","#00ff9d","#ffd166"][i%5];trails[i].style.transform=`translate3d(${t.x}px,${t.y}px,0) translate(-50%,-50%)`});requestAnimationFrame(cLoop)}requestAnimationFrame(cLoop);$$(".hover").forEach(e=>{e.onmouseenter=()=>document.body.classList.add("cursor-hover");e.onmouseleave=()=>document.body.classList.remove("cursor-hover")})}
 /* === RIPPLES === */
 $$(".ripple-target").forEach(b=>b.addEventListener("pointerdown",e=>{const z=document.createElement("span"),q=b.getBoundingClientRect();z.className="ripple";z.style.left=e.clientX-q.left+"px";z.style.top=e.clientY-q.top+"px";b.appendChild(z);setTimeout(()=>z.remove(),760)}));
-/* === AUDIO ANALYZER === */
-const audio=$("#audio"),audioBtn=$("#audioBtn"),volume=$("#volume"),eq=$$(".eq i");audio.volume=.48;let ctx=null,analyser=null,source=null,data=null;function setupAudio(){if(ctx||!(window.AudioContext||window.webkitAudioContext))return;try{const C=window.AudioContext||window.webkitAudioContext;ctx=new C;analyser=ctx.createAnalyser();analyser.fftSize=128;analyser.smoothingTimeConstant=.78;source=ctx.createMediaElementSource(audio);source.connect(analyser);analyser.connect(ctx.destination);data=new Uint8Array(analyser.frequencyBinCount)}catch(_){analyser=null;data=null}}
-async function playAudio(){try{setupAudio();if(ctx&&ctx.state==="suspended")await ctx.resume();await audio.play();state.audio=true;audioBtn.setAttribute("aria-pressed","true");audioBtn.innerHTML='<i class="fa-solid fa-volume-high"></i>'}catch(_){state.audio=false;audioBtn.innerHTML='<i class="fa-solid fa-volume-xmark"></i>'}}
-function stopAudio(){audio.pause();state.audio=false;audioBtn.setAttribute("aria-pressed","false");audioBtn.innerHTML='<i class="fa-solid fa-volume-xmark"></i>'}audioBtn.onclick=()=>audio.paused?playAudio():stopAudio();volume.oninput=()=>{audio.volume=+volume.value;if(audio.volume===0)audioBtn.innerHTML='<i class="fa-solid fa-volume-xmark"></i>'};let gesture=false;document.addEventListener("pointerdown",()=>{if(!gesture){gesture=true;playAudio()}},{capture:true,once:true});
-/* === BEAT / EQUALIZER === */
-function beat(){if(analyser&&data){analyser.getByteFrequencyData(data);let s=0,n=Math.max(3,Math.floor(data.length*.2));for(let i=0;i<n;i++)s+=data[i];state.targetBeat=clamp((s/n/255)*2.2,0,1)}else{const t=performance.now()*.001;state.targetBeat=state.audio&&!audio.paused?((Math.sin(t*4.1)+1)*.13+(Math.sin(t*9.7)+1)*.04):((Math.sin(t*1.4)+1)*.02)}state.beat=lerp(state.beat,state.targetBeat,.16);document.documentElement.style.setProperty("--beat",state.beat.toFixed(3));eq.forEach((e,i)=>e.style.transform=`scaleY(${clamp(.28+state.beat*(1.15-i*.08)+Math.sin(performance.now()*(.004+i*.0007))*.12,.1,1)})`);requestAnimationFrame(beat)}requestAnimationFrame(beat);
-/* === LASER MODE + SYNTH WHOOSH === */
-const laser=$("#laser");function whoosh(){if(!ctx)return;try{const o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.setValueAtTime(360,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(1150,ctx.currentTime+.22);g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.1,ctx.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.24);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.25)}catch(_){}}laser.onclick=async()=>{if(!state.audio)await playAudio();state.laser=!state.laser;laser.classList.toggle("on",state.laser);laser.setAttribute("aria-pressed",String(state.laser));whoosh()};
+/* === AUDIO / MUSIC ENGINE === */
+const audio=$("#audio"),audioBtn=$("#audioBtn"),volume=$("#volume"),eq=$$(".eq i"),audioStatus=$("#audioStatus"),syncStatus=$("#syncStatus"),flashFrame=$("#flashFrame"),beatRing=$("#beatRing");
+audio.volume=.48;
+const music={bpm:128,beatDur:60/128,lastBeat:-1,lastKick:-1,energy:.06,instant:.06,peak:0,analyser:null,source:null,analysis:false,initTried:false,startedAt:0};
+function setAudioUI(){
+  const on=!audio.paused&&!audio.ended;
+  state.audio=on;
+  audioBtn.setAttribute("aria-pressed",String(on));
+  audioBtn.innerHTML=on?'<i class="fa-solid fa-volume-high"></i>':'<i class="fa-solid fa-volume-xmark"></i>';
+  audioStatus.textContent=on?"MUSIC LIVE":"MUSIC OFF";
+  syncStatus.textContent=on?(music.analysis?"AUDIO ANALYSIS":"TEMPO CHOREOGRAPHY"):"LIGHTS / IDLE";
+}
+function initAudioAnalysis(){
+  if(music.initTried)return;
+  music.initTried=true;
+  // Cross-origin MP3 playback must stay on the native <audio> element. Only attach an
+  // AnalyserNode when the source is same-origin; otherwise use deterministic tempo choreography.
+  try{
+    const src=new URL(audio.currentSrc||audio.querySelector('source')?.src,location.href);
+    if(src.origin!==location.origin){music.analysis=false;return}
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC)return;
+    music.ctx=new AC();
+    music.source=music.ctx.createMediaElementSource(audio);
+    music.analyser=music.ctx.createAnalyser();
+    music.analyser.fftSize=1024;
+    music.analyser.smoothingTimeConstant=.72;
+    music.source.connect(music.analyser);
+    music.analyser.connect(music.ctx.destination);
+    music.data=new Uint8Array(music.analyser.frequencyBinCount);
+    music.analysis=true;
+  }catch(err){music.analysis=false;console.warn("Realtime analyzer unavailable; using tempo choreography.",err)}
+}
+async function playAudio(){
+  try{
+    audio.muted=false;
+    if(audio.readyState<2)audio.load();
+    initAudioAnalysis();
+    if(music.ctx&&music.ctx.state==="suspended")try{await music.ctx.resume()}catch(_){}
+    await new Promise((resolve,reject)=>{
+      if(audio.readyState>=2){resolve();return}
+      const ok=()=>{cleanup();resolve()};
+      const bad=()=>{cleanup();reject(audio.error||new Error("MP3 gagal dimuat"))};
+      const cleanup=()=>{audio.removeEventListener("canplay",ok);audio.removeEventListener("error",bad)};
+      audio.addEventListener("canplay",ok,{once:true});
+      audio.addEventListener("error",bad,{once:true});
+      setTimeout(()=>{cleanup();reject(new Error("Timeout memuat MP3"))},9000);
+    });
+    await audio.play();
+    music.startedAt=performance.now();
+    state.audio=true;
+    if(!state.laser){state.laser=true;laser.classList.add("on");laser.setAttribute("aria-pressed","true")}
+    setAudioUI();
+  }catch(err){
+    state.audio=false;setAudioUI();audioStatus.textContent="MP3 GAGAL";syncStatus.textContent="CEK LINK / INTERNET";
+    console.warn("Audio gagal diputar:",err);
+  }
+}
+function stopAudio(){audio.pause();setAudioUI();}
+audioBtn.onclick=async e=>{e.stopPropagation();if(audio.paused||audio.ended)await playAudio();else stopAudio()};
+volume.oninput=()=>{audio.volume=+volume.value;setAudioUI()};
+audio.addEventListener("play",setAudioUI);audio.addEventListener("pause",setAudioUI);audio.addEventListener("ended",setAudioUI);
+audio.addEventListener("error",()=>{state.audio=false;audioStatus.textContent="MP3 UNAVAILABLE";syncStatus.textContent="CHECK CONNECTION";console.warn("MP3 tidak dapat dimuat:",audio.currentSrc,audio.error)});
+
+function readMusicEnergy(t){
+  if(!music.analysis||!music.analyser||audio.paused)return null;
+  music.analyser.getByteFrequencyData(music.data);
+  let low=0,mid=0,hi=0;
+  const n=music.data.length;
+  for(let i=0;i<n;i++){const v=music.data[i]/255;if(i<n*.08)low+=v;else if(i<n*.32)mid+=v;else hi+=v}
+  low/=Math.max(1,n*.08);mid/=Math.max(1,n*.24);hi/=Math.max(1,n*.68);
+  return clamp(low*.52+mid*.34+hi*.14,0,1);
+}
+function tempoEnergy(t){
+  const b=t/music.beatDur;
+  const frac=b-Math.floor(b);
+  const kick=Math.exp(-Math.pow(frac/.065,2));
+  const bar=(Math.floor(b)%4===0)?1:.52;
+  const section=(Math.floor(b/32)%3===2)?1.0:(Math.floor(b/32)%3===1?.72:.5);
+  const sub=Math.max(0,Math.sin(b*Math.PI*2*2))*.08;
+  return clamp(.055+kick*.42*bar*section+sub,0,.95);
+}
+function musicTick(){
+  const t=performance.now()*.001;
+  let e=readMusicEnergy(t);
+  if(e==null){e=audio.paused?(.018+.012*(Math.sin(t*1.3)+1)) : tempoEnergy(Math.max(0,audio.currentTime||t));}
+  music.instant=e;
+  music.energy=lerp(music.energy,e,.18);
+  music.peak=Math.max(e,music.peak*.91);
+  const beatIndex=audio.paused?-1:Math.floor((audio.currentTime||0)/music.beatDur);
+  if(beatIndex>=0&&beatIndex!==music.lastBeat){
+    music.lastBeat=beatIndex;
+    if(e>.28){
+      beatRing.classList.remove("active");void beatRing.offsetWidth;beatRing.classList.add("active");
+    }
+  }
+  state.targetBeat=clamp(.04+music.energy*.72,.02,.72);
+  state.beat=lerp(state.beat,state.targetBeat,.2);
+  document.documentElement.style.setProperty("--beat",state.beat.toFixed(3));
+  eq.forEach((el,i)=>{const wave=.5+.5*Math.sin(t*(8+i*.95)+i);const amount=.16+state.beat*(.9-i*.045)+wave*.11;el.style.transform=`scaleY(${clamp(amount,.08,1)})`});
+  if(!audio.paused&&e>.62&&music.lastKick!==beatIndex){
+    music.lastKick=beatIndex;
+    if(Math.random()<.38){flashFrame.classList.remove("hit");void flashFrame.offsetWidth;flashFrame.classList.add("hit")}
+  }
+  requestAnimationFrame(musicTick)
+}
+requestAnimationFrame(musicTick);
+
+/* === REALISTIC LASER ENGINE + SYNTH WHOOSH === */
+const laser=$("#laser"), laserCanvas=$("#laserFx"), lctx=laserCanvas.getContext("2d",{alpha:true});
+const stage={w:0,h:0,d:1,ready:false,seed:performance.now(),targetX:innerWidth*.5,targetY:innerHeight*.47,focusUntil:0};
+const fixtures=[
+  {x:.11,color:"#00eaff",phase:rnd(0,6.28),pan:rnd(.42,.78),tilt:rnd(.28,.48),beam:1.08},
+  {x:.28,color:"#7c3cff",phase:rnd(0,6.28),pan:rnd(.45,.82),tilt:rnd(.28,.52),beam:.86},
+  {x:.43,color:"#ff4fd8",phase:rnd(0,6.28),pan:rnd(.38,.72),tilt:rnd(.28,.46),beam:.98},
+  {x:.57,color:"#00ff9d",phase:rnd(0,6.28),pan:rnd(.44,.8),tilt:rnd(.3,.5),beam:.9},
+  {x:.72,color:"#ffd166",phase:rnd(0,6.28),pan:rnd(.48,.86),tilt:rnd(.31,.52),beam:.82},
+  {x:.89,color:"#00f5ff",phase:rnd(0,6.28),pan:rnd(.42,.8),tilt:rnd(.3,.5),beam:1.06}
+];
+function hexRGB(hex){const n=parseInt(hex.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255]}
+function rgba(hex,a){const [r,g,b]=hexRGB(hex);return`rgba(${r},${g},${b},${a})`}
+function resizeLaserFx(){stage.d=Math.min(devicePixelRatio||1,state.mobile?1.15:1.8);stage.w=innerWidth;stage.h=innerHeight;laserCanvas.width=Math.floor(stage.w*stage.d);laserCanvas.height=Math.floor(stage.h*stage.d);laserCanvas.style.width=stage.w+"px";laserCanvas.style.height=stage.h+"px";lctx.setTransform(stage.d,0,0,stage.d,0,0)}
+function randomTarget(){stage.targetX=rnd(stage.w*.08,stage.w*.92);stage.targetY=rnd(stage.h*.26,stage.h*.88);stage.focusUntil=performance.now()+rnd(850,1900)}
+function beamPath(x0,y0,x1,y1,spread){const dx=x1-x0,dy=y1-y0,len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len;return[[x0,y0],[x1+nx*spread,y1+ny*spread],[x1-nx*spread,y1-ny*spread]]}
+function drawFixture(f,t){
+  const sx=stage.w*f.x, sy=Math.max(36,stage.h*.085+Math.sin(t*.45+f.phase)*3), c=f.color;
+  const energy=music.energy;
+  const chorusBoost=(Math.floor(((audio.currentTime||t)/music.beatDur)/32)%3===2)?1.25:1;
+  const speedBoost=1+energy*2.2*chorusBoost;
+  let pan=Math.sin(t*f.pan*speedBoost+f.phase)*(.56+energy*.42), tilt=.88+Math.sin(t*f.tilt*speedBoost+f.phase*.71)*(.2+energy*.13);
+  if(performance.now()<stage.focusUntil){const dx=stage.targetX-sx,dy=stage.targetY-sy;pan=Math.atan2(dx,stage.h*.78)*1.35;tilt=clamp(Math.atan2(Math.abs(dx)+80,Math.max(120,dy))*0.42,.42,1.14)}
+  const dirX=Math.sin(pan)*tilt, dirY=Math.cos(pan)*tilt;
+  const far=stage.h*1.28, ex=sx+dirX*far, ey=sy+dirY*far;
+  const pulse=clamp(.52+Math.sin(t*(5.2+energy*7)+f.phase)*.10+energy*.58,.28,1.2);
+  if(energy>.66) tilt += Math.sin(t*9+f.phase)*.07;
+
+  // fixture halo and physical-ish head
+  lctx.save();
+  lctx.globalCompositeOperation="screen";
+  const halo=lctx.createRadialGradient(sx,sy,0,sx,sy,34+state.beat*20);halo.addColorStop(0,rgba(c,.9));halo.addColorStop(.18,rgba(c,.28));halo.addColorStop(1,"rgba(0,0,0,0)");lctx.fillStyle=halo;lctx.beginPath();lctx.arc(sx,sy,36+state.beat*18,0,Math.PI*2);lctx.fill();
+  lctx.restore();
+
+  // wide volumetric cone
+  const spread=8+Math.abs(dirY)*26+state.beat*9;
+  const tri=beamPath(sx,sy,ex,ey,spread);
+  lctx.save();lctx.globalCompositeOperation="screen";
+  const g=lctx.createLinearGradient(sx,sy,ex,ey);g.addColorStop(0,rgba(c,.06*pulse));g.addColorStop(.14,rgba(c,.055*pulse));g.addColorStop(.55,rgba(c,.028*pulse));g.addColorStop(1,"rgba(0,0,0,0)");lctx.fillStyle=g;lctx.beginPath();lctx.moveTo(...tri[0]);lctx.lineTo(...tri[1]);lctx.lineTo(...tri[2]);lctx.closePath();lctx.fill();
+  // soft outer bloom
+  lctx.filter=`blur(${12+state.beat*7}px)`;lctx.strokeStyle=rgba(c,.22*pulse);lctx.lineWidth=2.5+state.beat*1.8;lctx.beginPath();lctx.moveTo(sx,sy);lctx.lineTo(ex,ey);lctx.stroke();lctx.filter="none";
+  // bright center core with slightly unstable thickness
+  lctx.strokeStyle=rgba(c,.78*pulse);lctx.lineWidth=0.8+state.beat*.55;lctx.beginPath();lctx.moveTo(sx,sy);lctx.lineTo(ex,ey);lctx.stroke();
+  lctx.strokeStyle=`rgba(255,255,255,${.76*pulse})`;lctx.lineWidth=.42;lctx.beginPath();lctx.moveTo(sx,sy);lctx.lineTo(ex,ey);lctx.stroke();
+  lctx.restore();
+
+  // atmospheric dust catches the beam
+  lctx.save();lctx.globalCompositeOperation="lighter";
+  for(let i=1;i<8;i++){const q=i/8;const px=sx+(ex-sx)*q,py=sy+(ey-sy)*q;const rr=1.3+Math.sin(t*2.1+i+f.phase)*.7;const pg=lctx.createRadialGradient(px,py,0,px,py,rr*7);pg.addColorStop(0,rgba(c,.15*pulse));pg.addColorStop(1,"rgba(0,0,0,0)");lctx.fillStyle=pg;lctx.beginPath();lctx.arc(px,py,rr*7,0,Math.PI*2);lctx.fill()}
+  lctx.restore();
+
+  // floor impact / scanning fan
+  const fy=clamp(ey,stage.h*.72,stage.h*.96), fx=ex-(ey-fy)*(dirX/Math.max(.1,dirY));
+  const impact=lctx.createRadialGradient(fx,fy,0,fx,fy,34+state.beat*20);impact.addColorStop(0,rgba(c,.52*pulse));impact.addColorStop(.15,rgba(c,.18*pulse));impact.addColorStop(1,"rgba(0,0,0,0)");lctx.fillStyle=impact;lctx.beginPath();lctx.ellipse(fx,fy,36+state.beat*14,7+state.beat*4,0,0,Math.PI*2);lctx.fill();
+  lctx.strokeStyle=rgba(c,.6*pulse);lctx.lineWidth=1;lctx.beginPath();for(let k=0;k<10;k++){const a=(k/10)*Math.PI*2+t*.35+f.phase;const rx=15+Math.sin(t*4+k)*4,ry=5+Math.cos(t*3+k)*1.6;lctx.moveTo(fx,fy);lctx.lineTo(fx+Math.cos(a)*rx,fy+Math.sin(a)*ry)}lctx.stroke();
+}
+function laserFrame(){requestAnimationFrame(laserFrame);if(!stage.ready)return;const now=performance.now(),t=now*.001;lctx.clearRect(0,0,stage.w,stage.h);lctx.globalCompositeOperation="screen";
+  // cinematic haze, strongest near the bottom of the stage
+  const haze=lctx.createLinearGradient(0,stage.h*.25,0,stage.h);haze.addColorStop(0,"rgba(0,0,0,0)");haze.addColorStop(.48,"rgba(102,71,170,.025)");haze.addColorStop(1,`rgba(255,255,255,${.014+state.beat*.012})`);lctx.fillStyle=haze;lctx.fillRect(0,0,stage.w,stage.h);
+  // moving club wash / gobo pools in the air
+  const energy=music.energy;
+  for(let i=0;i<8;i++){
+    const sx=(i+0.5)/8*stage.w + Math.sin(t*(.24+i*.025)+i)*32;
+    const sy=stage.h*(.08 + (i%3)*.08);
+    const rr=45+energy*95;
+    const col=fixtures[i%fixtures.length].color;
+    const wash=lctx.createRadialGradient(sx,sy,0,sx,sy,rr);
+    wash.addColorStop(0,rgba(col,.055+energy*.03));wash.addColorStop(1,"rgba(0,0,0,0)");
+    lctx.fillStyle=wash;lctx.beginPath();lctx.arc(sx,sy,rr,0,Math.PI*2);lctx.fill();
+  }
+  fixtures.forEach(f=>drawFixture(f,t));
+  // occasional shutter/strobe only during laser mode, kept subtle for realism
+  if((state.laser||energy>.62)&&energy>.48&&Math.random()<(0.006+energy*.02)){lctx.fillStyle=`rgba(255,255,255,${.018+energy*.045})`;lctx.fillRect(0,0,stage.w,stage.h)}
+  // laser target slowly relocates when not manually focused
+  if(now>stage.focusUntil){
+    const moveChance=.0028+energy*.011+(state.laser?.004:0);
+    if(Math.random()<moveChance)randomTarget();
+  }
+}
+resizeLaserFx();stage.ready=true;randomTarget();addEventListener("resize",resizeLaserFx,{passive:true});
+addEventListener("pointerdown",e=>{if(e.target.closest("button,a,input,select"))return;stage.targetX=e.clientX;stage.targetY=e.clientY;stage.focusUntil=performance.now()+1700},{passive:true});
+requestAnimationFrame(laserFrame);
+function whoosh(){if(!ctx)return;try{const o=ctx.createOscillator(),g=ctx.createGain();o.type="sine";o.frequency.setValueAtTime(360,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(1150,ctx.currentTime+.22);g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.1,ctx.currentTime+.03);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.24);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.25)}catch(_){}}
+laser.onclick=()=>{state.laser=!state.laser;laser.classList.toggle("on",state.laser);laser.setAttribute("aria-pressed",String(state.laser));whoosh();if(state.laser)randomTarget()};
 /* === CONFETTI / MONEY RAIN === */
 const fx=$("#fx"),fctx=fx.getContext("2d",{alpha:true}),items=[];function resizeFx(){const d=Math.min(devicePixelRatio||1,state.mobile?1.25:1.7);fx.width=innerWidth*d;fx.height=innerHeight*d;fx.style.width=innerWidth+"px";fx.style.height=innerHeight+"px";fctx.setTransform(d,0,0,d,0,0)}resizeFx();addEventListener("resize",resizeFx,{passive:true});function burst(n=state.mobile?55:115){for(let i=0;i<n;i++)items.push({money:i%5===0,x:innerWidth/2+rnd(-80,80),y:innerHeight*.34+rnd(-30,30),vx:rnd(-7,7),vy:rnd(-12,-5),g:rnd(.15,.3),rot:rnd(0,6.28),vr:rnd(-.16,.16),s:rnd(6,12),life:rnd(80,150),c:["#00f5ff","#7c3cff","#ff4fd8","#00ff9d","#ffd166"][Math.floor(rnd(0,5))]})}if(!state.reduced)setTimeout(()=>burst(state.mobile?32:75),820);$("#anatomi").onclick=()=>burst(state.mobile?60:130);function fxLoop(){fctx.clearRect(0,0,innerWidth,innerHeight);for(let i=items.length-1;i>=0;i--){const a=items[i];a.x+=a.vx;a.vy+=a.g;a.y+=a.vy;a.rot+=a.vr;a.vx*=.994;a.life--;if(a.life<=0||a.y>innerHeight+90){items.splice(i,1);continue}fctx.save();fctx.translate(a.x,a.y);fctx.rotate(a.rot);fctx.globalAlpha=clamp(a.life/55,0,1);if(a.money){const w=a.s*2.2,h=a.s*1.15;fctx.fillStyle="#4cf0a0";fctx.fillRect(-w/2,-h/2,w,h);fctx.strokeStyle="#d9fff0";fctx.strokeRect(-w/2,-h/2,w,h);fctx.fillStyle="#052216";fctx.font=`700 ${Math.max(8,a.s*.8)}px monospace`;fctx.textAlign="center";fctx.textBaseline="middle";fctx.fillText("$",0,0)}else{fctx.fillStyle=a.c;fctx.fillRect(-a.s/2,-a.s/2,a.s,a.s*.42)}fctx.restore()}requestAnimationFrame(fxLoop)}requestAnimationFrame(fxLoop);
 /* === CHASE BORDER === */
@@ -163,8 +355,8 @@ let angle=0;function border(){angle=(angle+.7+state.beat*1.8)%360;document.docum
 const canvas=$("#webgl");let renderer=null,scene=null,camera=null,ball=null,tiles=null,lasers=null,beams=[],points=null,crowd=null;const pm={x:0,y:0},sm={x:0,y:0};
 function init3D(){if(!window.THREE)return;try{renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:!state.mobile,powerPreference:"high-performance"});renderer.setPixelRatio(Math.min(devicePixelRatio||1,state.mobile?1.1:1.5));renderer.setSize(innerWidth,innerHeight);renderer.setClearColor(0,0);scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,.1,100);camera.position.set(0,0,9.2);scene.add(new THREE.AmbientLight(0x7360ff,.35));const l1=new THREE.PointLight(0x00f5ff,5.4,24);l1.position.set(-6,4,3);scene.add(l1);const l2=new THREE.PointLight(0xff4fd8,5.6,24);l2.position.set(6,2,2);scene.add(l2);const l3=new THREE.PointLight(0xffd166,3.2,18);l3.position.set(0,5,1);scene.add(l3);makeBall();makeLasers();makeParticles();makeCrowd();addEventListener("pointermove",e=>{pm.x=e.clientX/innerWidth*2-1;pm.y=e.clientY/innerHeight*2-1},{passive:true});addEventListener("resize",resize3d,{passive:true});render3d()}catch(_){renderer=null}}
 function makeBall(){ball=new THREE.Group();ball.position.set(0,2.2,-1.5);scene.add(ball);ball.add(new THREE.Mesh(new THREE.SphereGeometry(1.68,28,20),new THREE.MeshPhysicalMaterial({color:0xe8edf4,metalness:1,roughness:.11,clearcoat:.4,clearcoatRoughness:.08})));const geo=new THREE.PlaneGeometry(.19,.19),mat=new THREE.MeshStandardMaterial({color:0xffffff,metalness:1,roughness:.08,side:THREE.DoubleSide}),nlat=state.mobile?8:11,nlon=state.mobile?18:24,inst=new THREE.InstancedMesh(geo,mat,nlat*nlon),d=new THREE.Object3D(),n=new THREE.Vector3();let k=0;for(let i=0;i<nlat;i++){const ph=(i+.5)/nlat*Math.PI;for(let j=0;j<nlon;j++){const th=j/nlon*Math.PI*2;n.set(Math.sin(ph)*Math.cos(th),Math.cos(ph),Math.sin(ph)*Math.sin(th));d.position.copy(n).multiplyScalar(1.71);d.lookAt(n.clone().multiplyScalar(3));const s=rnd(.72,1.03);d.scale.set(s,s,1);d.updateMatrix();inst.setMatrixAt(k++,d.matrix)}}inst.instanceMatrix.needsUpdate=true;tiles=inst;ball.add(inst);const ring=new THREE.Mesh(new THREE.TorusGeometry(1.94,.012,8,80),new THREE.MeshBasicMaterial({color:0x7c3cff,transparent:true,opacity:.25,blending:THREE.AdditiveBlending}));ring.rotation.x=Math.PI/2;ball.add(ring)}
-function makeLasers(){lasers=new THREE.Group();lasers.position.set(0,-2.85,-1.6);scene.add(lasers);const colors=[0x00f5ff,0xff4fd8,0x7c3cff,0x00ff9d,0xffd166],total=state.mobile?8:12,base=state.mobile?6:8;for(let i=0;i<total;i++){const len=rnd(11,15),m=new THREE.MeshBasicMaterial({color:colors[i%5],transparent:true,opacity:i<base?.26:0,blending:THREE.AdditiveBlending,depthWrite:false}),b=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,len,6),m);b.userData={phase:rnd(0,6.28),speed:rnd(.35,.8)};lasers.add(b);beams.push(b)}}
-function updateLasers(t){const active=state.laser?beams.length:(state.mobile?6:8);beams.forEach((b,i)=>{if(i>=active){b.material.opacity=0;return}b.material.opacity=clamp((.19+state.beat*.25)*(state.laser?1.5:1),.07,.8);const ph=b.userData.phase+t*b.userData.speed*(state.laser?2.8:1),sw=Math.sin(ph)*(.56+i*.006),sp=(i-(beams.length-1)/2)*.17,dir=new THREE.Vector3(sw+sp,1.25+Math.cos(ph*.78+i)*.24,.55+Math.sin(ph*.61+i)*.2).normalize();b.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir)});lasers.scale.setScalar(1+state.beat*(state.laser?.28:.12))}
+function makeLasers(){lasers=new THREE.Group();lasers.position.set(0,-2.85,-1.6);scene.add(lasers);const colors=[0x00f5ff,0xff4fd8,0x7c3cff,0x00ff9d,0xffd166],total=state.mobile?8:12,base=state.mobile?6:8;for(let i=0;i<total;i++){const len=rnd(11,15),m=new THREE.MeshBasicMaterial({color:colors[i%5],transparent:true,opacity:i<base?.09:0,blending:THREE.AdditiveBlending,depthWrite:false}),b=new THREE.Mesh(new THREE.CylinderGeometry(.012,.012,len,6),m);b.userData={phase:rnd(0,6.28),speed:rnd(.35,.8)};lasers.add(b);beams.push(b)}}
+function updateLasers(t){const active=state.laser?beams.length:(state.mobile?6:8);beams.forEach((b,i)=>{if(i>=active){b.material.opacity=0;return}b.material.opacity=clamp((.07+state.beat*.09)*(state.laser?1.35:1),.025,.22);const ph=b.userData.phase+t*b.userData.speed*(state.laser?2.8:1),sw=Math.sin(ph)*(.56+i*.006),sp=(i-(beams.length-1)/2)*.17,dir=new THREE.Vector3(sw+sp,1.25+Math.cos(ph*.78+i)*.24,.55+Math.sin(ph*.61+i)*.2).normalize();b.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),dir)});lasers.scale.setScalar(1+state.beat*(state.laser?.28:.12))}
 function makeParticles(){const n=state.mobile?450:(state.laser?1500:900),p=new Float32Array(n*3),c=new Float32Array(n*3),colors=[new THREE.Color(0x00f5ff),new THREE.Color(0x7c3cff),new THREE.Color(0xff4fd8),new THREE.Color(0x00ff9d),new THREE.Color(0xffd166)];for(let i=0;i<n;i++){const q=i*3;p[q]=rnd(-11,11);p[q+1]=rnd(-5,10);p[q+2]=rnd(-4,3);const col=colors[Math.floor(rnd(0,5))];c[q]=col.r;c[q+1]=col.g;c[q+2]=col.b}const g=new THREE.BufferGeometry();g.setAttribute("position",new THREE.BufferAttribute(p,3));g.setAttribute("color",new THREE.BufferAttribute(c,3));points=new THREE.Points(g,new THREE.PointsMaterial({size:state.mobile?.026:.032,vertexColors:true,transparent:true,opacity:.56,sizeAttenuation:true,blending:THREE.AdditiveBlending,depthWrite:false}));scene.add(points)}
 function makeCrowd(){crowd=new THREE.Group();crowd.position.set(0,-3.95,1.1);scene.add(crowd);const n=state.mobile?11:19;for(let i=0;i<n;i++){const person=new THREE.Group(),x=(i-(n-1)/2)*.92+rnd(-.2,.2),s=rnd(.76,1.18);const head=new THREE.Mesh(new THREE.SphereGeometry(.18,10,8),new THREE.MeshBasicMaterial({color:0x090616,transparent:true,opacity:.95}));head.position.y=1.1;const body=new THREE.Mesh(new THREE.CapsuleGeometry(.19,.56,6,10),new THREE.MeshBasicMaterial({color:0x070410,transparent:true,opacity:.98}));body.position.y=.47;person.add(head,body);person.position.set(x,rnd(-.15,.1),rnd(-.1,.8));person.scale.setScalar(s);person.userData.seed=rnd(0,8);crowd.add(person)}}
 function resize3d(){if(!renderer||!camera)return;renderer.setPixelRatio(Math.min(devicePixelRatio||1,state.mobile?1.1:1.5));renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}
